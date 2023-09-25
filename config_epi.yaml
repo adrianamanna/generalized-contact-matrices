@@ -1,0 +1,11 @@
+# params epidemic
+N_iter: 5
+seed: 100
+mu_val: 0.25
+eps_val: 0.4
+stop: 2000
+r0: 2.7
+stop_curves: 190
+
+
+NPI_bool: False
