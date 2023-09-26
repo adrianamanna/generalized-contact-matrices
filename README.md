@@ -15,10 +15,10 @@
 - **run_plot_epi_curves.py**: phyton script to process and plot the results of the epidemic simulations.
 
 The **data** folder contains the *data.pkl* file, that stores the following information:
-    - 'country': name of the country
-    - 'N': population distribution by age classes as in the survey. 
-    - 'M': age-contact matrix
-    - 'tot_N_pop': total population in the country
+- 'country': name of the country
+- 'N': population distribution by age classes as in the survey. 
+- 'M': age-contact matrix
+- 'tot_N_pop': total population in the country
 
 
 In the **utils**:
@@ -48,9 +48,9 @@ The code will create the following paths:
     - `mixing_type`: random_mixing or assortative_mixing
     
     if assortative_mixing is selected:
-        - `activity`: relative activity of each group (has to sum up to 1) ($P_{\alpha}$)
-        - `r`: assortativity of each group ($q_{\alpha}$)
-        - `ds`: free parameters for the off-diagonal case
+    - `activity`: relative activity of each group (has to sum up to 1) ($P_{\alpha}$)
+    - `r`: assortativity of each group ($q_{\alpha}$)
+    - `ds`: free parameters for the off-diagonal case
 
 For more dettails on the model to generate the synthetic generalized-contact matrices please see the Supplementary Information. 
         
