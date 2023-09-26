@@ -1,22 +1,20 @@
 # Generalized contact matrices for epidemic modeling
 
-
 ## I. CONTENT 
 
 - **config_matrix.yaml**: configuration file to run the script run_generate_sy_matrix.
 - **config_epi.yaml**: configuration file to run the script run_epi.
 
 - **run_generate_sy_matrix.py**: phyton script to build generalized contact matrices starting from an age contact matrix.
-- **run_epi.py**: phyton script to simulate a SEIR model. Implementing:
+- **run_epi.py**: phyton script to simulate a SEIR model. The epidemic will be simulated three times using each of the following contact-matrices:
     - i. age-contact matrices ($C_{ij}$).
     - ii. dim2 - contact matrices ($C_{\alpha\beta}$).
-    - iii. generalized contact matrices stratified by age and dim 2 ($G_{\math{a}\math{b}}$).
+    - iii. generalized contact matrices stratified by age and dim 2 ($G_{ab}$).
 
 - **run_plot_matrices.py**: phyton script to plot the three matrices.
 - **run_plot_epi_curves.py**: phyton script to process and plot the results of the epidemic simulations.
 
-In the **data** folder:
-- data.pkl
+The **data** folder contains the *data.pkl* file, that stores the following information:
     - 'country': name of the country
     - 'N': population distribution by age classes as in the survey. 
     - 'M': age-contact matrix
@@ -42,19 +40,20 @@ The code will create the following paths:
 
 ## II. INSTRUCTIONS
 
-### STEP 1: BUILD THE GENERALIZED AGE-CONTACT MATRICES
+### STEP 1: BUILD THE SYNTHETIC GENERALIZED CONTACT MATRICES
 
 1. In the config_matrix.yaml you can set the parameters to build the generalized contact matrix starting from the age-contact matrix of a given country. The parameters you can set are the following:
     - `country`: the country can be selected among the following: Zimbabwe - Peru - Vietnam - Hungary
     - `dist_Pd2`: distribution of the population in the three levels of the second dimension
     - `mixing_type`: random_mixing or assortative_mixing
     
-    if \textt{assortative_mixing} is selected:
-        - `r`: assortativity of each group
-        - `ds`: 
-        - `activity`: relative activity of each group (has to sum up to 1)
+    if assortative_mixing is selected:
+        - `activity`: relative activity of each group (has to sum up to 1) ($P_{\alpha}$)
+        - `r`: assortativity of each group ($q_{\alpha}$)
+        - `ds`: free parameters for the off-diagonal case
 
-
+For more dettails on the model to generate the synthetic generalized-contact matrices please see the Supplementary Information. 
+        
 
 2. Run 'python run_generate_sy_matrix.py' This script computes and stores the generalized contact matrix in the 'res/matrices' folder.
 
@@ -79,7 +78,7 @@ The code will create the following paths:
 
 ________________________
 
-## SIV. PACKAGES VERSIONS**
+## IV. PACKAGES VERSIONS
 
 json5                     0.9.6              pyhd3eb1b0_0  
 matplotlib                3.5.2            py39h06a4308_0  
