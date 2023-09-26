@@ -1,9 +1,8 @@
-import numpy as np
-import pandas as pd
+#import numpy as np
+#import pandas as pd
 import scipy.linalg as la
 
-from utils.SEIR import *
-
+#from utils.SEIR import *
 
 
 def eig_leading(M):
@@ -18,13 +17,6 @@ def get_beta(M,R0, mu_val):
     beta_val=mu_val*R0/(leading)
     return beta_val
 
-
-def ass_by_age(M):
-    '''
-    M: np.array
-    '''
-    M_tilda = M/M.sum(axis = 1)[:,None]
-    return np.diag(M_tilda)
 
 
 

@@ -22,7 +22,7 @@ if __name__== '__main__':
 #.data
 data = pd.read_pickle('./data/data.pkl')
 
-P_d1, N, N_pop,  M_d1 , M_d1_tot = get_Pd1_Md1(data, config['country'])
+P_d1, N_pop,  M_d1 , M_d1_tot = get_Pd1_Md1(data, config['country'])
 P_d1d2 = get_P_d1d2(P_d1,config['n_dim2'],config['dist_Pd2'])
 P_d2 =  {key: config['dist_Pd2'][key] for key in range(len(config['dist_Pd2']))}
 

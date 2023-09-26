@@ -14,12 +14,11 @@ def get_Pd1_Md1(data, country):
     - P_d1 :: dict 
         key : age groups
         values: pop fracion of age group i
-    - N :: int 
+    - N_pop :: int 
         total number of individuals in country
     - M_d1 :: dict
         key (i): age groups
         values: dict {age group j: average number of  contacts of i with age group j}
-        
     - M_d1_tot: as M_d1 but with total number of contacts'''
     
     
@@ -33,10 +32,7 @@ def get_Pd1_Md1(data, country):
     P = data_c['N'][0]/sum(data_c['N'][0])
     P_d1 = pd.DataFrame(P).to_dict()[0]
     
-    
     # total population 
-    N  = sum(data_c['N'][0])
-    
     N_pop =  data_c['tot_N_pop'][0]
     
     
@@ -47,9 +43,7 @@ def get_Pd1_Md1(data, country):
         for j in M_d1[i].keys():
             M_d1_tot[i][j] = M_d1[i][j]*P_d1[i]*N_pop
 
-    return P_d1,N,N_pop,  M_d1 , M_d1_tot
-
-
+    return P_d1,N_pop,  M_d1 , M_d1_tot
 
 
 def get_P_d1d2(P_d1,n_dim2,dist_Pd2):

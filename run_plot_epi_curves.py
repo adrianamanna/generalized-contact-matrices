@@ -8,7 +8,7 @@ import pickle
 import os
 
 
-if not os.path.exists("./_figs"):
+if not os.path.exists("./figs"):
     os.makedirs("./figs")
 
 

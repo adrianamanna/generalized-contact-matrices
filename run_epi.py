@@ -56,7 +56,7 @@ for key_seed_d1d2 in key_seed_d1d2_list:
     beta_val_d1d2,
     config['mu_val'],
     config['eps_val'],
-    config['stop_curves'],
+    config['stop'],
     False,
     None,
     None))
@@ -81,7 +81,7 @@ for key_seed_d1 in key_seed_d1_list:
     beta_val_d1d2,
     config['mu_val'],
     config['eps_val'],
-    config['stop_curves'],
+    config['stop'],
     False,
     None,
     None))
@@ -107,8 +107,8 @@ for key_seed_d2 in key_seed_d2_list:
     beta_val_d1d2,
     config['mu_val'],
     config['eps_val'],
-    config['stop_curves'],
-    config['NPI_bool'],
+    config['stop'],
+    False,
     None,
     None))
     
